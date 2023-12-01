@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Requerimentos</title>
+    <!--<link rel="stylesheet" href="../CSS/style.css">-->
+</head>
+<body>
+    <div class="container">
+        <div class="column-left">
+            <div class="form-box login">
+                <div class="img-login">
+                    <img src="../CSS/logo_if.png" width="40px">
+                </div> 
+                <form class="form" action="cadastro_discente.php" method="post">
+                    <div class="input">
+                        <button>Aluno</button>
+                        <button>ADM</button>
+                        <label for="userType">Tipo de Usuário:</label>
+                    </div>
+
+                    <div class="input">
+                        <input id="name" type="text" placeholder="Nome" name="nome" required>
+                        <label for="name">Nome:</label>
+                    </div>
+
+                    <div class="input">
+                        <label for="course">Curso:</label>
+                        <select id="userType" name="curso_usuario" required>
+                            <option value="informatica">Informática</option>
+                            <option value="meio-ambiente">Meio Ambiente</option>
+                            <option value="edificacoes">Edificações</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <label for="class">Turma:</label>
+                        <select id="userType" name="curso_usuario" required>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="41">41</option>
+                        </select>
+                    </div>
+                </form>
+                <a href="../LOGIN/">Já possuo uma conta</a>
+                <button type="submit" class="btn">Cadastrar</button>
+            </div>
+        </div>
+
+        <div class="column-right">
+           
+        </div>
+    </div>
+</body>
+</html>
