@@ -1,4 +1,29 @@
 <?php
+
+include "CONEXAO/conexao_BD.inc";
+
+extract($_POST);
+
+  if($conexao){
+
+      $sql = "INSERT INTO `requerimento`(`id_requerimento`,`data_incial`, `data_final`, `nomes_docentes`, `emails_docentes`, `anexo`, `motivo`, `status`,`id_discente`, `id_cores`) VALUES (6,'$data_inicial','$data_final','$nome_docente','$email_docente','.txt','$motivo',1,1111111111,0)";
+      $res=mysqli_query($conexao, $sql);
+
+      echo "Cadastro relalizado com sucesso";
+      echo "<a href = '../LOGIN/index.html'> fazer login </a>";
+
+      
+  }else{
+
+      die("Erro na conexão: " . mysqli_connect_error());
+
+  }
+  
+
+
+  mysqli_close($conexao);
+
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -31,15 +56,14 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Teste envio de EMAIL';
 
-    
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nomeProfessor = $_POST["nome_professor"];
-        $emailProfessor = $_POST["email_professor"];
-        $dataInicial = $_POST["datainicial"];
-        $dataFinal = $_POST["datafinal"];
+        $nomeProfessor = $_POST["nome_docente"];
+        $emailProfessor = $_POST["email_docente"];
+        $dataInicial = $_POST["data_inicial"];
+        $dataFinal = $_POST["data_final"];
         $motivo = $_POST["motivo"];
-        $observacao = $_POST["observacao"];
+        $observacao = $_POST["observacoes"];
         
     }
     

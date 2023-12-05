@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Requerimento</title>
+    <link rel="stylesheet" href="/PROJETO INTEGRADOR/CSS/style.css">
+    <script src="/PROJETO INTEGRADOR/JS/app.js" defer></script>
+    <script> //GPT
+        // Função para adicionar campos de professor
+        function adicionarCampoProfessor() {
+            var container = document.getElementById("professores");
+            var camposProfessor = container.getElementsByClassName("professor");
+
+            // Verifica se o limite máximo de campos (20) não foi atingido
+            if (camposProfessor.length < 20) {
+                var novoCampoProfessor = document.createElement("div");
+                novoCampoProfessor.className = "professor";
+
+                novoCampoProfessor.innerHTML = `
+                <label for="nome_professor">Nome do Docente Envolvido: </label>            
+                <input type="text" name="nome_professor" class="nome_professor" id="nome_professor" placeholder="Nome do Professor">
+                              
+                <label for="email_professor">E-mail do Docente Envolvido:</label>
+                <input type="email" name="email_professor" class="email_professor" id="email_professor" placeholder="Email do Professor">
+                              
+
+
+                <button type="button" onclick="removerCampoProfessor(this)">-</button>`;
+
+                container.appendChild(novoCampoProfessor);
+            }
+        }
+
+        // Função para remover campos de professor
+        function removerCampoProfessor(botaoRemover) {
+            var container = document.getElementById("professores");
+            container.removeChild(botaoRemover.parentNode);
+        }
+    </script>
+</head>
+
+<body>
+    
+    <form action="seu_script.php" method="post">
+        <div id="novo-requerimento">
+        <div id="professores">
+            <div class="professor">
+                <!-- O campo de nome e email do professor inicial -->
+                <label for="nome_professor">Nome do Docente Envolvido: </label>
+                <input type="text" name="nome_professor" class="nome_professor" id="nome_professor"
+                    placeholder="Nome do Professor">
+
+
+                <label for="email_professor">E-mail do Docente Envolvido:</label>
+                <input type="email" name="email_professor" class="email_professor" id="email_professor"
+                    placeholder="Email do Professor">
+                    
+                    <button type="button" onclick="adicionarCampoProfessor()">+</button>
+            </div>
+
+        </div>
+
+        
+        <div id="direito-requerimento">
+            <div class="so_pra_alinhar_o_buttom">
+        <div id="cax"><!-- New -->
+            
+            
+            <div class="parte_de_cima">
+            <div class="dates"><!-- Devesse observar esse elemento "dates" -->
+                <label for="datainicial">Data Inicial:</label>
+                <input id="datainicial" type="date" name="datainicial">
+                <label for="datafinal">Data Final:</label>
+                <input id="datafinal" type="date" name="datafinal">
+                
+            </div>
+
+            <div class="selects">
+                <label for="motivo">Motivo do Requerimento:</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="Justificar Falta">Justificar Falta</option>
+                    <option value="Segunda Chamada">2° Chamada</option>
+                </select>
+                <br>
+    
+                <label for="anexo">Anexos:</label>
+                <br>
+                <input type="file" name="anexo" id="anexo">
+                <label for="anexo" class="anexo">
+                    <span class="arquivo_anexado">Clique aqui duas vezes ou arraste seu arquivo para esta caixa</span></label>
+            </div></div>
+
+            <div class="alter">
+                <label for="observacao">Observações:</label>
+                <input type="text" name="observacao" id="observacao">
+            
+            </div>
+        
+
+        </div>
+        <div class="input_novo">
+            <input type="submit" value="Enviar"> 
+        </div>
+    </div>
+    </div>
+    
+    </form>
+</body>
+
+</html>

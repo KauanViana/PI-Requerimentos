@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requerimentos - IFBA</title>
+    <link rel="stylesheet" href="../CSS/requerimento_discente.css">
+</head>
+<body>
+    <div class="container">
+        <div class="barra-lateral">
+            <div class="side-top">
+                <div class="side-top-items">
+                    <img src="../../ESTILO/IMAGENS/Logo_IF.png" width="30px">
+                    <hr>
+                </div>
+            </div>
+
+            <div class="side-mid">
+                <button>Meus Requerimentos</button>
+                <button>Configurações</button>
+                a
+            </div>
+
+            <div class="side-bottom">
+                b
+                <button id="novo-requerimento">Novo Requerimento</button>
+            </div>
+        </div>
+        <div class="div2">a</div>
+    </div>
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <label for="input1">Label 1:</label>
+            <input type="text" id="input1">
+
+            <label for="input2">Label 2:</label>
+            <input type="text" id="input2">
+
+            <label for="input3">Label 3:</label>
+            <input type="text" id="input3">
+
+            <label for="input4">Label 4:</label>
+            <input type="text" id="input4">
+
+            <label for="input5">Label 5:</label>
+            <input type="text" id="input5">
+
+            <label for="input6">Label 6:</label>
+            <input type="text" id="input6">
+            
+            <label for="input7">Label 7:</label>
+            <input type="text" id="input7">
+
+            <button>Botão 1</button>
+            <button>Botão 2</button>
+            <button>Botão 3</button>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Adicione scripts ou interações do modal aqui
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("novo-requerimento");
+        var span = document.getElementsByClassName("close")[0];
+        
+        // Abre o modal quando o botão é clicado
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Fecha o modal quando o usuário clica no 'x'
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal se o usuário clicar fora da área do modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
