@@ -289,14 +289,14 @@ function etapa3(){
     document.getElementsByClassName('box-inner-box')[0].appendChild(form);
 
     // troca botao proxima etapa para cadastrar
-    document.getElementById('prox-etapa').remove();
+    var cadastrar = document.getElementById('prox-etapa');
 
-    var cadastrar = document.createElement('button');
+    // var cadastrar = document.createElement('button');
     cadastrar.textContent = "CADASTRAR";
-    cadastrar.id = "cadastrar";
-    cadastrar.type = "button";
-    cadastrar.className = "botao";
-    cadastrar.onclick = cadastrar;
+    // cadastrar.id = "cadastrar";
+    // cadastrar.type = "button";
+    // cadastrar.className = "botao";
+    cadastrar.onclick = realizar_cadastro;
 
-    document.getElementsByClassName('box2')[0].appendChild(cadastrar);
+    // document.getElementsByClassName('box2')[0].appendChild(cadastrar);
 }
