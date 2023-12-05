@@ -4,49 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Requerimentos</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../../CODIGO/_CSS/style.css">
 </head>
 <body>
     <div class="box">
-            <div class="box-inner-box">
+        <div class="box-inner-box">
+            <form class="form" action="cadastro_discente.php" method="post" id="cadastro_form">
                 <div class="img-login">
                     <img src="../../ESTILO/IMAGENS/Logo_IF.png" width="40px" class="logo" draggable="false">
                     <hr>
-                    <button>Aluno</button>
-                    <button>ADM</button>
+                    <button id="opcao1" type="button">ALUNO</button>
+                    <button id="opcao2" type="button">ADM</button>
                 </div> 
-                <form class="form" action="cadastro_discente.php" method="post">
+                    <div class="texx">
+                        <div class="input">
+                            <label for="name">Nome:</label>
+                            <input id="name" type="text" placeholder="Nome" name="nome" class="inserir" >
+                        </div>
 
-                    <div class="input">
-                        <input id="name" type="text" placeholder="Nome" name="nome" class="inserir" required>
-                        <label for="name">Nome:</label>
-                    </div>
+                        <div class="input">
+                            <label for="course">Curso:</label>
+                            <select id="curso" name="curso_usuario" class="inserir" >
+                                <option value="informatica">Informática</option>
+                                <option value="meio-ambiente">Meio Ambiente</option>
+                                <option value="edificacoes">Edificações</option>
+                            </select>
+                        </div>
 
-                    <div class="input">
-                        <label for="course">Curso:</label>
-                        <select id="userType" name="curso_usuario" class="inserir" required>
-                            <option value="informatica">Informática</option>
-                            <option value="meio-ambiente">Meio Ambiente</option>
-                            <option value="edificacoes">Edificações</option>
-                        </select>
+                        <div class="input">
+                            <label for="class">Turma:</label>
+                            <select id="turma" name="turma_usuario" class="inserir" >
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="41">41</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="input">
-                        <label for="class">Turma:</label>
-                        <select id="userType" name="curso_usuario" class="inserir" required>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="31">31</option>
-                            <option value="32">32</option>
-                            <option value="41">41</option>
-                        </select>
-                    </div>
-                </form>
-                <a href="../LOGIN/">Já possuo uma conta</a>
-                <button type="submit" class="botao">Cadastrar</button>
+            </form>
+        </div>
+        <div class="box2">
+            <a href="../LOGIN/">Já possuo uma conta</a>
+            <button type="button" class="botao" id="prox-etapa">PRÓXIMA ETAPA</button>
         </div>
     </div>
+    <script src="../_JS/etapas_cadastro.js"></script>
+    <script src="../_JS/animacoes_cadastro.js"></script>
 </body>
 </html>
