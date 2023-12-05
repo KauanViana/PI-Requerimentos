@@ -5,8 +5,18 @@
 
     if($conexao){
         
-
-        $sql = "INSERT INTO `discente`(`Nome`, `E-mail(INST)`, `Curso`, `Turma`, `Telefone`, `Senha`, `matricula`) VALUES ('$nome','$email','$cursos','$turma','$tell','$senha','$matricula')";
+        if($curso_usuario == "Informatica"){
+            $idcurso = 4;
+            $idturma = 4;
+        }elseif($curso_usuario == "Edificações"){
+            $idcurso = 2;
+            $idturma = 2;
+        }elseif($curso_usuario == "Meio Ambiente"){
+            $idcurso = 3;
+            $idturma = 3;
+        }
+    
+        $sql = "INSERT INTO `discente`(`id_matricula`, `nome_aluno`, `endereço`, `celular`, `email`, `senha`, `id_curso`, `id_turma`) VALUES ('$matricula','$nome','$endereco','$tell','$email','$senha','$idcurso','$idturma')";
         $res=mysqli_query($conexao, $sql);
 
         echo "Cadastro relalizado com sucesso";
@@ -25,4 +35,5 @@
 
 
     setcookie("possui_login", "true", time()+60*60*24);
+  
 ?>

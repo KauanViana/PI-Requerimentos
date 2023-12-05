@@ -6,7 +6,7 @@
     if($conexao){
         
 
-        $sql = "INSERT INTO `doscente`(`SIAP`, `Nome`, `E-mail`, `Curso`, `Usuario`, `Senha`) VALUES ('$SIAP','$nome','$email','$cursos','$usuario','$senha')";
+        $sql = "INSERT INTO `docente`(`id_siape`, `nome`, `email`, `usuario`) VALUES ('$SIAP','$nome','$email','$usuario')";
         $res=mysqli_query($conexao, $sql);
 
         echo "Cadastro relalizado com sucesso";
