@@ -9,14 +9,14 @@
 
   if($conexao){
 
-        $sql = "SELECT * FROM discente WHERE matricula='$usuario' AND Senha='$senha' ";
+        $sql = "SELECT * FROM discente WHERE id_matricula= $usuario AND senha='$senha' ";
         $res=mysqli_query($conexao, $sql);
         $linha=mysqli_affected_rows($conexao);
 
         if($linha > 0){
             $num = rand(100000,900000);
             setcookie("Login",$num);
-            header("Location: /REQUERIMENTO/requerimento_discente.html?num=$num");
+            header("Location: ../REQUERIMENTO/index.php?num=$num");
 
         }else{
             echo "ERRO NO LOGIN, USUARIO OU SENHA incorretos";

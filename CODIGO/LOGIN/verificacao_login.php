@@ -7,14 +7,15 @@
     if(strlen($usuario) == 7){
         header("Location: login_docente.php?$queryString");
 
-    }else if(strlen($usuario) == 12){
+    }else if(strlen($usuario) == 10){
         header("Location: login_dicente.php?$queryString");
 
     }else if(strlen($usuario) == 9){
         header("Location: login_cores.php?$queryString");
         
     }else{
-        echo "senha invalida";
+        echo "ERRO NO LOGIN, USUARIO OU SENHA incorretos";
+        echo "<a href = 'index.html'> voltar </a>";
     }
 
 
